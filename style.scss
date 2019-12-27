@@ -1,7 +1,7 @@
 $color_1: #88a0bc;
 $color_2: #0cc776;
 //////////////////////////////////
-
+$nav_magassag: 6rem;
 //////////////////////////////////
 
 *,
@@ -29,7 +29,7 @@ body {
   grid-row: 1/2;
   grid-column: 2/3;
   width: 100%;
-  height: 4rem;
+  height: $nav_magassag;
   font-size: 1.6rem;
 
   display: flex;
@@ -44,7 +44,9 @@ body {
     display: flex;
   }
 
-  &__item {
+  &__item,
+  &__item:link,
+  &__item:visited {
     list-style-type: none;
     color: $color_1;
     font-weight: 700;
@@ -52,10 +54,8 @@ body {
     transition: 0.3s;
 
     &:hover {
-        color: $color_2;
+      color: $color_2;
     }
-
-
 
     &:not(:last-child) {
       margin-right: 5rem;
@@ -69,7 +69,7 @@ body {
 .main {
   grid-row: 2/3;
   grid-column: 2/3;
-  height: calc(100vh - 4rem);
+  height: calc(100vh - #{$nav_magassag});
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,7 +85,7 @@ body {
       margin-bottom: 4rem;
     }
     p {
-        line-height: 2.5rem;
+      line-height: 2.5rem;
       width: 80%;
       color: $color_1;
       margin-bottom: 6rem;
@@ -100,23 +100,44 @@ body {
       color: $color_2;
       font-weight: bold;
       cursor: pointer;
-      transition: 0.3s;
+      transition: 0.5s;
     }
-    .btn_1 {
+    .btn_1,
+    .btn_1:link,
+    .btn_1:visited {
       background-color: $color_2;
       color: #fff;
       margin-right: 8%;
+      background-image: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 50%,
+        #fff 50%
+      );
+      background-size: 210%;
 
-      &:hover {
-        background-color: #fff;
-        //border: 1px solid transparent;
+      &:hover,
+      &:active {
         color: $color_2;
+        background-position: 100%;
       }
     }
-    .btn_2 {
-      &:hover {
-        background-color: $color_2;
+    .btn_2,
+    .btn_2:link,
+    .btn_2:visited {
+      background-color: #fff;
+      background-image: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 50%,
+        $color_2 50%
+      );
+      background-size: 210%;
+
+      &:hover,
+      &:active {
         color: #fff;
+        background-position: 100%;
       }
     }
   }
