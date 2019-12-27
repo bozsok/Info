@@ -1,0 +1,130 @@
+$color_1: #88a0bc;
+$color_2: #0cc776;
+//////////////////////////////////
+
+//////////////////////////////////
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr 70% 1fr;
+  grid-template-rows: auto;
+}
+.nav {
+  grid-row: 1/2;
+  grid-column: 2/3;
+  width: 100%;
+  height: 4rem;
+  font-size: 1.6rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  color: $color_1;
+}
+.menu {
+  &__bar {
+    display: flex;
+  }
+
+  &__item {
+    list-style-type: none;
+    color: $color_1;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+        color: $color_2;
+    }
+
+
+
+    &:not(:last-child) {
+      margin-right: 5rem;
+    }
+  }
+  .active {
+    color: $color_2;
+  }
+}
+
+.main {
+  grid-row: 2/3;
+  grid-column: 2/3;
+  height: calc(100vh - 4rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__bal {
+    width: 70%;
+    font-size: 1.6rem;
+
+    h1 {
+      font-size: 4.5rem;
+      color: $color_2;
+      line-height: 5.5rem;
+      margin-bottom: 4rem;
+    }
+    p {
+        line-height: 2.5rem;
+      width: 80%;
+      color: $color_1;
+      margin-bottom: 6rem;
+    }
+
+    .btn_1,
+    .btn_2 {
+      display: inline-block;
+      padding: 1rem 2rem;
+      border: 1px solid $color_2;
+      border-radius: 3rem;
+      color: $color_2;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn_1 {
+      background-color: $color_2;
+      color: #fff;
+      margin-right: 8%;
+
+      &:hover {
+        background-color: #fff;
+        //border: 1px solid transparent;
+        color: $color_2;
+      }
+    }
+    .btn_2 {
+      &:hover {
+        background-color: $color_2;
+        color: #fff;
+      }
+    }
+  }
+
+  &__jobb {
+    width: 50%;
+  }
+  .illustration {
+    width: 100%;
+  }
+}
