@@ -114,6 +114,7 @@ body {
 
   @media only screen and (max-width: 768px) {
     height: calc(100vh - 18rem);
+    height: auto;
     flex-direction: column-reverse;
   }
 
@@ -124,7 +125,7 @@ body {
     ); /*1920px-nél 1.8rem (18px) a betű, 768px-nél 1.4rem-es*/
 
     @media only screen and (max-width: 768px) {
-      margin-top: 5rem;
+      margin-top: 3vh;
       width: 80%;
       text-align: center;
     }
@@ -171,7 +172,7 @@ body {
       );
       background-size: 210%;
 
-      @media only screen and (max-width: 310px) {
+      @media only screen and (max-width: 330px) {
         margin: 0 0 2rem 0;
       }
 
@@ -200,16 +201,12 @@ body {
       }
     }
   }
-
-  &__jobb {
-    width: 50%;
-    height: auto;
+  .illustration {
+    width: 40%;
 
     @media only screen and (max-width: 768px) {
-      width: 61%;
+      width: 70%;
+      margin-top: 5vh;      
     }
-  }
-  .illustration {
-    width: 100%;
   }
 }

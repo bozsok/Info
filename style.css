@@ -147,6 +147,7 @@ body {
 @media only screen and (max-width: 768px) {
   .main {
     height: calc(100vh - 18rem);
+    height: auto;
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
@@ -162,7 +163,7 @@ body {
 
 @media only screen and (max-width: 768px) {
   .main__bal {
-    margin-top: 5rem;
+    margin-top: 3vh;
     width: 80%;
     text-align: center;
   }
@@ -210,7 +211,7 @@ body {
   background-size: 210%;
 }
 
-@media only screen and (max-width: 310px) {
+@media only screen and (max-width: 330px) {
   .main__bal .btn_1,
   .main__bal .btn_1:link,
   .main__bal .btn_1:visited {
@@ -244,18 +245,14 @@ body {
   background-position: 100%;
 }
 
-.main__jobb {
-  width: 50%;
-  height: auto;
+.main .illustration {
+  width: 40%;
 }
 
 @media only screen and (max-width: 768px) {
-  .main__jobb {
-    width: 61%;
+  .main .illustration {
+    width: 70%;
+    margin-top: 5vh;
   }
-}
-
-.main .illustration {
-  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */
