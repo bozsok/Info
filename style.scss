@@ -1,5 +1,8 @@
 $color_1: #88a0bc;
 $color_2: #0cc776;
+$color_3: #375c88;
+$color_4: #f8c58e;
+$color_5: #dce9f9;
 //////////////////////////////////
 $nav_magassag: 6rem;
 //////////////////////////////////
@@ -15,12 +18,57 @@ $nav_magassag: 6rem;
 html {
   font-size: 62.5%;
   font-family: "Open Sans", sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
   box-sizing: border-box;
 }
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: calc(
+    24px + (45 - 24) * ((100vw - 768px) / (1920 - 768))
+  ); /*1920px-nél 4.5rem (45px) a betű, 500px-nél 2.4rem-es*/
+  color: $color_2;
+}
+
+h3 {
+  color: $color_3;
+  font-size: calc(
+    18px + (26 - 18) * ((100vw - 768px) / (1920 - 768))
+  ); /*1920px-nél 2.6rem (26px) a betű, 768px-nél 1.8rem-es*/
+}
+
+p {
+  color: $color_1;
+  font-size: calc(
+    14px + (18 - 14) * ((100vw - 768px) / (1920 - 768))
+  ); /*1920px-nél 1.8rem (18px) a betű, 768px-nél 1.4rem-es*/
+}
+
+#visszaNyil {
+  position: fixed;
+  bottom: 10rem;
+  right: 10rem;
+  color: $color_4;
+  font-size: 4rem;
+  z-index: 52;
+  transition: 0.3s;
+  opacity: 0;
+  visibility: hidden;
+
+  @media only screen and (max-width: 768px) {
+    bottom: 4rem;
+    right: 2rem;
+  }
+}
+
 .container {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 70% 1fr;
   grid-template-rows: auto;
@@ -113,16 +161,12 @@ body {
   align-items: center;
 
   @media only screen and (max-width: 768px) {
-    height: calc(100vh - 18rem);
     height: auto;
     flex-direction: column-reverse;
   }
 
   &__bal {
     width: 70%;
-    font-size: calc(
-      14px + (18 - 14) * ((100vw - 768px) / (1920 - 768))
-    ); /*1920px-nél 1.8rem (18px) a betű, 768px-nél 1.4rem-es*/
 
     @media only screen and (max-width: 768px) {
       margin-top: 3vh;
@@ -131,15 +175,10 @@ body {
     }
 
     h1 {
-      font-size: calc(
-        24px + (45 - 24) * ((100vw - 768px) / (1920 - 768))
-      ); /*1920px-nél 4.5rem (45px) a betű, 500px-nél 2rem-es*/
-      color: $color_2;
       margin-bottom: 4rem;
     }
     p {
       width: 80%;
-      color: $color_1;
       margin-bottom: 6rem;
 
       @media only screen and (max-width: 768px) {
@@ -148,65 +187,170 @@ body {
     }
 
     .btn_1,
-    .btn_2 {
-      display: inline-block;
-      padding: 1rem 2rem;
-      border: 1px solid $color_2;
-      border-radius: 3rem;
-      color: $color_2;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.5s;
-    }
-    .btn_1,
     .btn_1:link,
     .btn_1:visited {
-      background-color: $color_2;
       color: #fff;
-      margin-right: 8%;
       background-image: linear-gradient(
         120deg,
         transparent 0%,
         transparent 50%,
         #fff 50%
       );
-      background-size: 210%;
 
       @media only screen and (max-width: 330px) {
         margin: 0 0 2rem 0;
-      }
-
-      &:hover,
-      &:active {
-        color: $color_2;
-        background-position: 100%;
       }
     }
     .btn_2,
     .btn_2:link,
     .btn_2:visited {
-      background-color: #fff;
       background-image: linear-gradient(
         120deg,
         transparent 0%,
         transparent 50%,
         $color_2 50%
       );
-      background-size: 210%;
-
-      &:hover,
-      &:active {
-        color: #fff;
-        background-position: 100%;
-      }
     }
   }
+
   .illustration {
     width: 40%;
 
     @media only screen and (max-width: 768px) {
-      width: 70%;
-      margin-top: 5vh;      
+      width: 60%;
+      margin-top: 5vh;
+    }
+  }
+}
+/* Gombok */
+.btn_1,
+.btn_2 {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border: 1px solid $color_2;
+  border-radius: 3rem;
+  color: $color_2;
+  font-size: calc(14px + (18 - 14) * ((100vw - 768px) / (1920 - 768)));
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s;
+
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 5rem;
+  }
+}
+.btn_1,
+.btn_1:link,
+.btn_1:visited {
+  background-color: $color_2;
+  color: #fff;
+  margin-right: 8%;
+  background-image: linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 50%,
+    #fff 50%
+  );
+  background-size: 210%;
+
+  @media only screen and (max-width: 330px) {
+    margin: 0 0 2rem 0;
+  }
+
+  &:hover,
+  &:active {
+    color: $color_2;
+    background-position: 100%;
+  }
+}
+.btn_2,
+.btn_2:link,
+.btn_2:visited {
+  background-color: #fff;
+  text-decoration: none;
+  background-image: linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 50%,
+    $color_3 50%
+  );
+  background-size: 210%;
+
+  &:hover,
+  &:active {
+    color: #fff !important;
+    background-position: 100%;
+  }
+}
+/*****************************
+Oktatást segító programok rész
+******************************/
+.programok_container {
+  display: grid;
+  grid-template-columns: 1fr 70% 1fr;
+  grid-template-rows: auto;
+  background-color: #f5f6f8;
+  height: 60vh;
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+
+  .programok {
+    grid-row: 1/2;
+    grid-column: 2/3;
+
+    h1 {
+      margin-top: 5rem;
+      text-align: center;
+      color: $color_3;
+    }
+
+    .billgyak {
+      margin-top: 5rem;
+      width: 100%;
+      height: auto;
+      background-color: #f5f6f8;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      @media only screen and (max-width: 768px) {
+        height: auto;
+        flex-direction: column;
+      }
+
+      &__szoveg {
+        text-align: justify;
+        padding: 3rem;
+
+        @media only screen and (max-width: 768px) {
+          width: 90%;
+          text-align: center;
+        }
+
+        h3,
+        p {
+          margin-bottom: 3rem;
+        }
+      }
+
+      .btn_2,
+      .btn_2:link,
+      .btn_2:visited {
+        border: 1px solid $color_1;
+        color: $color_1;
+      }
+
+      &__kep {
+        width: 35%;
+
+        @media only screen and (max-width: 768px) {
+      width: 60%;
+        }
+      }
     }
   }
 }

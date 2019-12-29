@@ -10,11 +10,17 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap&subset=latin-ext"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+    <script src="js.js" defer></script>
   </head>
   <body>
     <div class="container">
+      <a href="#nav"><i id="visszaNyil" class="fas fa-arrow-circle-up"></i></a>
       <!--Navigációs sáv-->
-      <section class="nav">
+      <section class="nav" id="nav">
         <div class="logo">INFOPETOFI</div>
         <div class="menu">
           <ul class="menu__bar">
@@ -30,10 +36,13 @@
         <div class="main__bal">
           <h1>Informatika, számítástechnika,<br />digitális technológia</h1>
           <p>
-            Ezen az oldalon az iskolában oktatott tananyagok között böngészhetsz, a tananyaghoz kapcsolódó tesztekkel ellenőrizheted a megtanultakat, kipróbálhatsz oktatást segítő programokat és egyéb érdekességekről is olvashatsz.
+            Ezen az oldalon az iskolában oktatott tananyagok között
+            böngészhetsz, a tananyaghoz kapcsolódó tesztekkel ellenőrizheted a
+            megtanultakat, kipróbálhatsz oktatást segítő programokat és egyéb
+            érdekességekről is olvashatsz.
           </p>
           <div class="btn_1">Érdekességek</div>
-          <div class="btn_2">Programok</div>
+          <a class="btn_2" href="#programok">Programok</a>
         </div>
         <img
           src="img/Illustration.jpg"
@@ -42,6 +51,28 @@
           width="600px"
           height="auto"
         />
+      </section>
+    </div>
+    <!-- Programok rész -->
+    <div class="programok_container">
+      <section class="programok" id="programok">
+        <h1>Oktatást segítő programok</h1>
+        <div class="billgyak">
+          <img
+            class="billgyak__kep"
+            src="img/Illustration_04.jpg"
+            alt="Billentyűzetgyakorló program képe"
+            width="400"
+          />
+          <div class="billgyak__szoveg">
+            <h3>Billentyűzetgyakorló program</h3>
+            <p>
+              A program a billentyűzet gombjainak megismerését szolgálja, segíti
+              a betűk, számok, jelek helyének megtalálását a billentyűzeten.<br><br><b>Figyelem!</b> Egyelőre csak <b>monitoros</b> használatra készült!
+            </p>
+            <a href="http://www.petofink.hu/pages/letoltes/informatika/BillGyakProgram/index.html" target="_blank" class="btn_2">Billentyűzetgyakorló program</a>
+          </div>          
+        </div></a>
       </section>
     </div>
   </body>
