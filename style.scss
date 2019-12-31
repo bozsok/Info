@@ -74,6 +74,7 @@ p {
   display: grid;
   grid-template-columns: 1fr 60% 1fr;
   grid-template-rows: auto;
+  height: auto;
 
   @media only screen and (max-width: 768px) {
     grid-template-columns: 1fr;
